@@ -1,0 +1,33 @@
+
+Requirements:
+
+You need the gnet library (libgnet) including development headers (libgnet-dev).
+If you can't find packages, get the source code from http://www.gnetlibrary.org
+
+
+If libgnet is correctly installed, running
+
+    gnet-config --cflags
+
+should not result in an error.
+
+
+After that is taken care of, type
+
+    make
+
+     or
+
+    make static
+
+to build the program.
+
+
+    make install   (as root)
+
+will install it into /usr/local/bin. If you want it somewhere else, just copy it there.
+
+Cheers
+-Tim
+
+

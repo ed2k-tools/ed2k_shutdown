@@ -1,0 +1,46 @@
+ed2k_shutdown v0.1 --- http://ed2k-tools.sourceforge.net
+
+
+This program is licensed under the GNU General Public License.
+See the COPYING file for details.
+
+(c) 2003 Tim-Philipp Muller <t.i.m@orange.net>
+
+
+Description:
+------------
+
+ed2k_shutdown is a little utility that cleanly shuts down an
+eDonkey2000 or overnet command line client. It does so by using
+the GUI-core protocol via a tcp connections to the so-called
+'aport' on which the core listens for a GUI connection.
+
+In other words: The 'core' must
+
+(a) be configured properly (a username+password must be set up)
+
+(b) be listening on the 'aport' (default is: 4663) for GUI
+    connections (which it does only if it has been started with
+    the '-' parameter).
+
+(c) have been started with the '!' parameter as last parameter
+    (which effectively blocks all input via the command line;
+    if this is not the case, the core will only shutdown after
+    the next command input)
+
+(d) not be connected to a GUI when you run the 'shutdown' program
+
+
+If all that is the case, you can shutdown the core via
+
+ed2k_shutdown <host> <aport> <user> <pass>
+
+
+Enjoy!
+
+-Tim
+
+http://ed2k-tools.sourceforge.net
+
+
+

@@ -1,0 +1,9 @@
+ed2k-shutdown (0.1-1) unstable; urgency=low
+
+  * First debian release.
+
+ -- Tim-Philipp Müller <t.i.m@orange.net>  Tue, 04 Feb 2003 09:02:07 +0000
+
+Local variables:
+mode: debian-changelog
+End:

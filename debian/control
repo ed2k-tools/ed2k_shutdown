@@ -1,0 +1,12 @@
+Source: ed2k-shutdown
+Section: x11
+Priority: optional
+Maintainer: Tim-Philipp Müller <t.i.m@orange.net>
+Standards-Version: 3.5.7.0
+
+Package: ed2k-shutdown
+Architecture: i386
+Depends: libc6 (>= 2.2.5-6)
+Description: A little tool to shutdown an eDonkey2000 or Overnet command
+ line client via the 'aport' (GUI port).
+ 
