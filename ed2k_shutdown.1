@@ -1,0 +1,58 @@
+.TH ED2K_SHUTDOWN "1" "November 2003" "ed2k_shutdown 0.2" "User Commands"
+.SH NAME
+ed2k_shutdown \- manual page for ed2k_shutdown 0.2
+.SH SYNOPSIS
+.B ed2k_shutdown
+\fIhost\fR \fIaport\fR \fIusername\fR \fIpassword\fR [\fIcommand\fR]
+.SH DESCRIPTION
+Helper tool that connects to an Overnet/eDonkey2000 command line client
+on the GUI port (=aport) and either shuts it down or sends a single
+command line command to it (without shutting it down). Useful for cron
+jobs and to cleanly shut down a command line client in GUI mode
+without having to fire up a GUI. Also useful for init scripts.
+.SH REQUIREMENTS
+ed2k_shutdown only makes sense to use with an Overnet or eDonkey2000
+command line client (=core).
+.SH OPTIONS
+You always need to specify host, port, username, and password. If no
+command is specified, the core will be shut down, otherwise the given
+command line command will be sent to it.
+.TP
+\fBhost\fR
+The hostname or IP of the computer where the core is running,
+usually 'localhost'.
+.TP
+\fBaport\fR
+The 'admin port' (=GUI port) of the core (usually 4663). Note that
+the core must be started with special command line options in order
+to make it listen on the GUI port. Cores from v51.2 onwards need to
+be passed the '-g' option to make them listen on the GUI port.
+.TP
+\fBusername\fR, \fBpassword\fR
+The configured 'GUI' username that allows you to remote control the
+core you are going to connect to. This has nothing to do with your
+unix login name, and should be different. Please not that username
+and password are sent to the core in clear text, so do not use any
+'valuable' usernames or passwords for that. Username and password
+must be configured with the core before this utility can be used.
+Either by using the 'pass joe joepass' command in the command line
+client, or by letting ed2k-gtk-gui take care of it (it will set the
+username/password in the core's preferences file when it spawns a
+core).
+.TP
+\fBcommand\fR
+Command to be sent to the core. If not specified, the core is shut down.
+Type the command just as you type them into the command line client itself.
+Commands that contain spaces must be protected by quotes around the whole
+command line, e.g. "dumax 0 10"
+.SH EXAMPLES:
+.TP
+ed2k_shutdown localhost 4663 bob bobpass
+.TP
+ed2k_shutdown localhost 4663 bob bobpass "dumax 0 10"
+.SH HOMEPAGE
+.TP
+http://ed2k-tools.sourceforge.net
+.SH AUTHOR
+This manual page was written by Tim-Philipp Müller <t.i.m@orange.net>.
+

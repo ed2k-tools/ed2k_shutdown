@@ -1,6 +1,6 @@
 
 DEBIAN_EXTRA_DIST = debian/control debian/rules debian/changelog
-EXTRA_DIST = Makefile AUTHORS COPYING INSTALL README
+EXTRA_DIST = Makefile AUTHORS COPYING INSTALL README ed2k_shutdown.1
 SOURCES = ed2k_shutdown.c
 
 CC = gcc
@@ -39,5 +39,6 @@ static: $(OBJECTS)
 install:
 	@echo "About to install ed2k_shutdown into $(prefix)/bin ... (waiting 3 secs)"
 	@sleep 3
-	install -D -s ed2k_shutdown "$(prefix)/bin/ed2k_shutdown"
+	/usr/bin/install -c -D -s ed2k_shutdown "$(prefix)/bin/ed2k_shutdown"
+	/usr/bin/install -c -D -m 644 ed2k_shutdown.1 $(prefix)/share/man/man1/ed2k_shutdown.1
 
