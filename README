@@ -1,4 +1,4 @@
-ed2k_shutdown v0.1 --- http://ed2k-tools.sourceforge.net
+ed2k_shutdown v0.2 --- http://ed2k-tools.sourceforge.net
 
 
 This program is licensed under the GNU General Public License.
@@ -21,19 +21,32 @@ In other words: The 'core' must
 
 (b) be listening on the 'aport' (default is: 4663) for GUI
     connections (which it does only if it has been started with
-    the '-' parameter).
+    the '-g' parameter (v51.2 and later) or the '-' parameter
+    (v50.1 and earlier)).
 
-(c) have been started with the '!' parameter as last parameter
+(c) have been started with the '-l' parameter as last parameter
     (which effectively blocks all input via the command line;
     if this is not the case, the core will only shutdown after
-    the next command input)
+    the next command input) (core v51.2 and later), or the
+    '!' parameter (core v50.1 and earlier)
 
-(d) not be connected to a GUI when you run the 'shutdown' program
+(d) not be connected to a GUI when you run this program
 
 
 If all that is the case, you can shutdown the core via
 
-ed2k_shutdown <host> <aport> <user> <pass>
+  ed2k_shutdown <host> <aport> <user> <pass>
+
+or send an advanced command with:
+
+  ed2k_shutdown <host> <aport> <user> <pass> <command in quotes>
+
+
+Examples:
+
+  ed2k_shutdown localhost 4663 bob bobpass
+
+  ed2k_shutdown 192.168.0.9 7777 joe joepass "dumax 0 10" 
 
 
 Enjoy!

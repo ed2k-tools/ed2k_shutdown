@@ -1,15 +1,25 @@
 
 Requirements:
 
-You need the gnet library (libgnet) including development headers (libgnet-dev).
+You need the gnet2 library including development headers.
+
+These packages are called libgnet2.0-0 and libgnet2.0-dev (debian) 
+  or gnet2 and gnet2-devel, or just gnet2 or similar.
+
+
 If you can't find packages, get the source code from http://www.gnetlibrary.org
 
 
 If libgnet is correctly installed, running
 
-    gnet-config --cflags
+    pkg-config --cflags gnet-2.0
 
 should not result in an error.
+
+
+Gnet2 depends on glib2, which you probably have installed already. You
+ might need the libglib2.0-dev (or glib2-devel) package though.
+
 
 
 After that is taken care of, type
@@ -20,12 +30,14 @@ After that is taken care of, type
 
     make static
 
+
 to build the program.
 
 
     make install   (as root)
 
-will install it into /usr/local/bin. If you want it somewhere else, just copy it there.
+will install it into /usr/local/bin. If you want it somewhere else, just copy it there
+  or edit the makefile
 
 Cheers
 -Tim
